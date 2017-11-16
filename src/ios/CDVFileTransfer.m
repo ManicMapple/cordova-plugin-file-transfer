@@ -362,7 +362,7 @@ static CFIndex WriteDataToStream(NSData* data, CFWriteStreamRef stream)
     }
     if (fs) {
         __weak CDVFileTransfer* weakSelf = self;
-        [fs readFileAtURL:sourceURL start:start:i_startByte end:end:i_endByte callback:^(NSData *fileData, NSString *mimeType, CDVFileError err) {
+        [fs readFileAtURL:sourceURL start:i_startByte end:i_endByte callback:^(NSData *fileData, NSString *mimeType, CDVFileError err) {
             if (err) {
                 // We couldn't find the asset.  Send the appropriate error.
                 CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:[weakSelf createFileTransferError:NOT_FOUND_ERR AndSource:source AndTarget:server]];
