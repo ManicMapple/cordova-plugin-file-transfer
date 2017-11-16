@@ -172,7 +172,7 @@ FileTransfer.prototype.upload = function(filePath, server, successCallback, erro
             }
         }
     };
-    exec(win, fail, 'FileTransfer', 'upload', [filePath, server, fileKey, fileName, mimeType, params, trustAllHosts, chunkedMode, headers, this._id, httpMethod,,startByte,endByt]);
+    exec(win, fail, 'FileTransfer', 'upload', [filePath, server, fileKey, fileName, mimeType, params, trustAllHosts, chunkedMode, headers, this._id, httpMethod,startByte,endByte]);
 };
 
 /**
