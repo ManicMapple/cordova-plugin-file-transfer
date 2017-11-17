@@ -278,7 +278,8 @@ static CFIndex WriteDataToStream(NSData* data, CFWriteStreamRef stream)
          if(i_endByte == 0){
              i_endByte = -1;
          }
-         NSRange chunkRange = NSMakeRange(i_startByte, i_endByte-i_startByte);
+         // fileData is already a Chunk. So we start at position 0
+         NSRange chunkRange = NSMakeRange(0, i_endByte-i_startByte);
          NSData* chunkData = [fileData subdataWithRange:chunkRange];
  
      if (multipartFormUpload) {
