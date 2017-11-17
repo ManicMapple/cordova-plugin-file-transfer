@@ -453,7 +453,7 @@ public class FileTransfer extends CordovaPlugin {
                             totalBytes += beforeDataBytes.length;
                         }
 
-                        if(endByte>0)){
+                        if(endByte>0){
                            int byteRange = endByte-startByte;
                            byte[] buffer = new byte[byteRange];
                            
